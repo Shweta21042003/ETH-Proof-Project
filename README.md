@@ -28,7 +28,7 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
     function mint(address addr, uint val) public {
         total += val;
         balances[addr] += val;
-        }
+    }
 
     function burn(address addr, uint val) public {
         if (balances[addr] >= val) {
@@ -36,7 +36,7 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
             total -= val;
         }
     }
-     }
+  }
 
     
     
@@ -51,7 +51,7 @@ Once the contract is deployed, you can interact with it by calling the mint and 
 
 ## Authors
 
-Omkar Kawadghare
+Shweta Nasare
 
 
 ## License
