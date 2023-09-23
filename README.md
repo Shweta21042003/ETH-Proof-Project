@@ -14,33 +14,31 @@ To run this program, you can use Remix, an online Solidity IDE. To get started, 
 
 Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension (e.g., My_Token.sol). Copy and paste the following code into the file:
 
+
     // SPDX-License-Identifier: MIT
     pragma solidity ^0.8.18;
-    
+
     contract My_Token {
-        string public name = "OMKAR";
-        string public symbol = "OK";
-        uint8 public decimals = 8;
-        uint256 public totalSupply = 0; // Total supply with 18 decimal places
-    
-        mapping(address => uint256) public balanceOf;
+    string public name = "SHWETA";
+    string public symbol = "SN";
+    uint public total = 0;
 
-    event Mint(address indexed to, uint256 value);
-    event Burn(address indexed from, address indexed to, uint256 value); // Added 'to' address attribute
-    
-    function mint(address to, uint256 value) public {
-        totalSupply += value;
-        balanceOf[to] += value;
-    }
+    mapping(address => uint) public balances;
 
-    function burn(address from, uint256 value) public  {
-        require(balanceOf[from] >= value, "Insufficient balance for burning");
-        
-        balanceOf[from] -= value;
-        totalSupply -= value;
-        emit Burn(from, address(0), value); // Burning tokens by sending them to address(0)
+    function mint(address addr, uint val) public {
+        total += val;
+        balances[addr] += val;
+        }
+
+    function burn(address addr, uint val) public {
+        if (balances[addr] >= val) {
+            balances[addr] -= val;
+            total -= val;
         }
     }
+     }
+
+    
     
         
 
