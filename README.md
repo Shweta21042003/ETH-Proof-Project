@@ -35,8 +35,8 @@ Once you are on the Remix website, create a new file by clicking on the "+" icon
             balances[addr] -= val;
             total -= val;
         }
-    }
-  }
+        }
+      }
 
     
     
