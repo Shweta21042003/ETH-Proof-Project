@@ -2,21 +2,21 @@
 pragma solidity ^0.8.18;
 
 contract My_Token {
-    string public name = "OMKAR";
-    string public symbol = "OK";
-    uint public totalSupply = 0;
+    string public name = "SHWETA";
+    string public symbol = "SN";
+    uint public total = 0;
 
-    mapping(address => uint) public balanceOf;
+    mapping(address => uint) public balances;
 
-    function mint(address to, uint value) public {
-        totalSupply += value;
-        balanceOf[to] += value;
+    function mint(address addr, uint val) public {
+        total += val;
+        balances[addr] += val;
     }
 
-    function burn(address to, uint value) public {
-        if (balanceOf[to] >= value) {
-	    totalSupply -= value;
-            balanceOf[to] -= value;
+    function burn(address addr, uint val) public {
+        if (balances[addr] >= val) {
+            balances[addr] -= val;
+            total -= val;
         }
     }
 }
